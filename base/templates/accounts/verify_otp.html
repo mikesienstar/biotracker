@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Verify OTP{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+    <div class="p-8">
+        <div class="text-center mb-6">
+            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+                <i class="fas fa-envelope text-green-600"></i>
+            </div>
+            <h2 class="mt-3 text-2xl font-bold text-gray-800">Check Your Email</h2>
+            <p class="mt-2 text-gray-600">
+                We sent a 6-digit code to <span class="font-medium">{{ email }}</span>
+            </p>
+        </div>
+        
+        <form method="post" class="space-y-6">
+            {% csrf_token %}
+            
+            <div>
+                <label for="id_otp" class="block text-sm font-medium text-gray-700">Verification Code</label>
+                <div class="mt-1 relative rounded-md shadow-sm">
+                    {{ form.otp }}
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <i class="fas fa-key text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <button type="submit" 
+                        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    Verify & Continue
+                </button>
+            </div>
+        </form>
+        
+        <div class="mt-6 text-center">
+            <p class="text-sm text-gray-600">
+                Didn't receive a code? 
+                <a href="{% url 'send_otp' %}" class="font-medium text-indigo-600 hover:text-indigo-500">Resend</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
