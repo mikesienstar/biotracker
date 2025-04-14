@@ -120,10 +120,9 @@ DATABASES = {
 }
 
 
-
 import os
-GDAL_LIBRARY_PATH = '/usr/lib/libgdal.so'  # Common path on Render
-GEOS_LIBRARY_PATH = '/usr/lib/x86_64-linux-gnu/libgeos_c.so'
+GDAL_LIBRARY_PATH = os.popen('find /usr -name "libgdal.so.*" | head -n1').read().strip()
+GEOS_LIBRARY_PATH = os.popen('find /usr -name "libgeos_c.so.*" | head -n1').read().strip()
 
 
 
