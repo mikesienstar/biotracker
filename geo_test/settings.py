@@ -55,8 +55,8 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     # "http://localhost:3000",  
     # "http://localhost:5173",
-    'https://figerprint-auther-backend.onrender.com',
-    'https://fingerprint-auther-frontend.onrender.com'
+    'https://fronten-authn.onrender.com',
+    'https://backend-auther.onrender.com'
 ]
 
 MIDDLEWARE = [
