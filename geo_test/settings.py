@@ -123,7 +123,7 @@ import dj_database_url
 # Replace DATABASES with:
 DATABASES = {
     'default': dj_database_url.config(
-        default="https://biotracker-r7j6.onrender.com"
+        default="https://biotracker-r7j6.onrender.com",
         conn_max_age=600,
     )
 }
