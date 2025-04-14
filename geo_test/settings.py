@@ -202,7 +202,7 @@ EMAIL_HOST_PASSWORD = 'bevbzislkpdciakm '
 DEFAULT_FROM_EMAIL = 'geniusokwemba53@gmail.com'
 
 # Session settings
-SESSION_COOKIE_AGE = 1800  # 30 minutes
+SESSION_COOKIE_AGE = 1800  # 30 min
 SESSION_SAVE_EVERY_REQUEST = True
 
 # Authentication
