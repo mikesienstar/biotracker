@@ -105,28 +105,39 @@ GEOPY_USER_AGENT = "base"  # Required for Nominatim
 # }
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#         'NAME': 'biometrics_tech',
-#         'USER': 'webauthn_user',
-#         'PASSWORD': 'FxArNKGA4xTplFZdL67IEh1jCxEwjbkp',
-#         'HOST': 'dpg-cvtuqcadbo4c739bfa7g-a',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'biometrics',
+        'USER': 'webauthn_user',
+        'PASSWORD': 'iWqDIMj9uwyLvhRoPG4NKnLIUAFIXIfF',
+        'HOST': 'dpg-cvun01c9c44c738b6410-a.oregon-postgres.render.com',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',  # SSL encryption for Render PostgreSQL
+        }
+    }
+}
+
 
 
 import os
-import dj_database_url
+GDAL_LIBRARY_PATH = '/usr/lib/libgdal.so'  # Common path on Render
+GEOS_LIBRARY_PATH = '/usr/lib/x86_64-linux-gnu/libgeos_c.so'
+
+
+
+
+# import os
+# import dj_database_url
 
 # Replace DATABASES with:
-DATABASES = {
-    'default': dj_database_url.config(
-        default="postgresql://webauthn_user:iWqDIMj9uwyLvhRoPG4NKnLIUAFIXIfF@dpg-cvun01c9c44c738b6410-a.oregon-postgres.render.com/biometrics",
-        conn_max_age=600,
-    )
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default="postgresql://webauthn_user:iWqDIMj9uwyLvhRoPG4NKnLIUAFIXIfF@dpg-cvun01c9c44c738b6410-a.oregon-postgres.render.com/biometrics",
+#         conn_max_age=600,
+#     )
+# }
 
 
 
