@@ -123,7 +123,7 @@ import dj_database_url
 # Replace DATABASES with:
 DATABASES = {
     'default': dj_database_url.config(
-        default="https://biotracker-r7j6.onrender.com",
+        default="postgresql://webauthn_user:iWqDIMj9uwyLvhRoPG4NKnLIUAFIXIfF@dpg-cvun01c9c44c738b6410-a.oregon-postgres.render.com/biometrics",
         conn_max_age=600,
     )
 }
