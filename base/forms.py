@@ -67,9 +67,9 @@ class ProfileCompletionForm(forms.ModelForm):
         phone_number = ''.join(filter(str.isdigit, phone_number))
         
         # Check if the number starts with 254 and has exactly 12 digits (254 + 9)
-        if not (phone_number.startswith('+254') and len(phone_number) == 12):
+        if not (phone_number.startswith('254') and len(phone_number) == 12):
             raise forms.ValidationError(
-                "Phone number must start with country code +254 followed by 9 digits (e.g., 254712345678)"
+                "Phone number must start with country code 254 followed by 9 digits (e.g., 254712345678)"
             )
             
         return phone_number
