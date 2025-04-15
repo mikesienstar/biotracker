@@ -506,7 +506,7 @@ def geofence_violations(request, intern_id=None):
 def user_logout(request):
     logout(request)
     messages.success(request, "You have been successfully logged out.")
-    return redirect('login')  
+    return redirect('https://fronten-authn.onrender.com')  
 
 
 
